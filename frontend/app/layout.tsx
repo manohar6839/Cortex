@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google"
 import { Providers } from "./providers"
 import { ClientLayout } from "./components/client-layout"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css"
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Providers>
           <ClientLayout>{children}</ClientLayout>
         </Providers>
+        <Analytics />
       </body>
     </html>
   )

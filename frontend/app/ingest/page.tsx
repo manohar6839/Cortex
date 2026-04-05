@@ -23,7 +23,7 @@ const URL_PLATFORMS = {
 
 type PlatformKey = keyof typeof URL_PLATFORMS | "generic"
 
-function detectUrlPlatform(url: string): { platform: PlatformKey; config: typeof URL_PLATFORMS[PlatformKey] } {
+function detectUrlPlatform(url: string): { platform: PlatformKey; config: { label: string; icon: string; regex: RegExp } } {
   for (const [key, config] of Object.entries(URL_PLATFORMS)) {
     if (config.regex.test(url)) {
       return { platform: key as PlatformKey, config }
